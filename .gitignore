@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcresult/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+
+# 性能分析产物
+*.profraw
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# 环境变量与本地配置
+.env
+.env.local
+.env.*
+!.env.example
+
+# Cloudflare Worker 私有配置、本地状态、依赖和临时凭据
+server/node_modules/
+server/.wrangler/
+server/.generated/
+server/dist/
+server/wrangler.jsonc
+server/.dev.vars
+server/.dev.vars.*

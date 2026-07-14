@@ -1,0 +1,46 @@
+name: ZFStatMenus
+options:
+  bundleIdPrefix: com.zfstat
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    PRODUCT_BUNDLE_IDENTIFIER: com.zfstat.ZFStatMenus
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    INFOPLIST_FILE: zfstatmenus/Resources/Info.plist
+    CODE_SIGN_ENTITLEMENTS: zfstatmenus/Resources/ZFStatMenus.entitlements
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_HARDENED_RUNTIME: YES
+    DEVELOPMENT_TEAM: ""
+targets:
+  ZFStatMenus:
+    type: application
+    platform: macOS
+    dependencies:
+      - sdk: libsqlite3.tbd
+      - sdk: Security.framework
+    sources:
+      - path: zfstatmenus
+        excludes:
+          - "Resources/**"
+      - path: zfstatmenus/Resources/Assets.xcassets
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: ZFStatMenus
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  ZFStatMenusTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: zfstatmenusTests
+    dependencies:
+      - target: ZFStatMenus
+    settings:
+      base:
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ZFStatMenus.app/Contents/MacOS/ZFStatMenus"

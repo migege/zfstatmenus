@@ -1,0 +1,28 @@
+{
+  "name": "zfstatmenus-sync-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "config:init": "node scripts/init-config.mjs",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:check": "wrangler deploy --dry-run",
+    "check": "npm run types && tsc --noEmit",
+    "types": "wrangler types --config wrangler.test.jsonc src/worker-configuration.d.ts",
+    "test": "vitest run",
+    "db:create": "wrangler d1 create zfstatmenus-sync --binding DB --update-config",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "db:migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "user:create": "node scripts/create-user.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "latest",
+    "@types/node": "^26.1.1",
+    "typescript": "latest",
+    "vitest": "^4.1.0",
+    "wrangler": "latest"
+  }
+}
