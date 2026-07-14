@@ -443,6 +443,9 @@ struct TokenDetailView: View {
                     AppIconButton(systemName: "gearshape", help: "打开设置") {
                         AppWindowActions.openSettings()
                     }
+                    AppIconButton(systemName: "power", help: "退出 ZFStatMenus") {
+                        AppWindowActions.quit()
+                    }
                 }
 
                 HStack(spacing: 10) {
@@ -1181,6 +1184,9 @@ struct DetailHeader: View {
             Spacer()
             AppIconButton(systemName: "gearshape", help: "打开设置") {
                 AppWindowActions.openSettings()
+            }
+            AppIconButton(systemName: "power", help: "退出 ZFStatMenus") {
+                AppWindowActions.quit()
             }
         }
     }

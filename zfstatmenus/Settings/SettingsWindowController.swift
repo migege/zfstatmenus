@@ -56,4 +56,18 @@ enum AppWindowActions {
     static func openSettings() {
         SettingsWindowController.shared.show()
     }
+
+    @MainActor
+    static func quit() {
+        let alert = NSAlert()
+        alert.messageText = "确定要退出 ZFStatMenus 吗？"
+        alert.informativeText = "退出后将停止系统与 Token 监控。"
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "退出")
+        alert.addButton(withTitle: "取消")
+
+        NSApp.activate(ignoringOtherApps: true)
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        NSApp.terminate(nil)
+    }
 }
