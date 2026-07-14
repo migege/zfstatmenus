@@ -7,7 +7,7 @@
 - macOS 13 或更高版本
 - Xcode 15 或更高版本
 - XcodeGen（仅在新增、删除或移动 Swift 文件后需要）
-- Node.js 20 或更高版本（仅 Worker）
+- Node.js 22 或更高版本（仅 Worker）
 
 ## 验证
 

@@ -13,7 +13,7 @@
 
 ## 快速部署
 
-要求 Node.js 20+、Cloudflare 账号。Wrangler 已作为项目开发依赖安装，不需要全局安装。
+要求 Node.js 22+、Cloudflare 账号。Wrangler 已作为项目开发依赖安装，不需要全局安装。
 
 ### 1. 安装与认证
 

@@ -82,7 +82,7 @@ xcodebuild \
 ### 前置条件
 
 - Cloudflare 账号；
-- Node.js 20 或更高版本；
+- Node.js 22 或更高版本；
 - 可选：已托管到 Cloudflare 的域名（不配置时直接使用 `workers.dev` 地址）。
 
 ### 1. 安装依赖并登录
